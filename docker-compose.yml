@@ -1,0 +1,56 @@
+version: '3.8'
+services:
+  ztech-mercury:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yourusername/ztech-mercury-messenger:latest
+    container_name: ztech-mercury-messenger
+    ports:
+      - "3001:3001"
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=${JWT_SECRET:-your_secure_jwt_secret_key}
+      - LLM_PROVIDER=ollama
+      - OLLAMA_BASE_PATH=http://ollama:11434
+      - OLLAMA_MODEL_PREF=qwen3:0.6b
+      - OLLAMA_MODEL_TOKEN_LIMIT=4096
+      - EMBEDDING_ENGINE=native
+      - EMBEDDING_BASE_PATH=http://ollama:11434
+      - EMBEDDING_MODEL_PREF=nomic-embed-text:latest
+      - EMBEDDING_MODEL_MAX_CHUNK_LENGTH=8192
+      - VECTOR_DB=lancedb
+      - WHISPER_PROVIDER=local
+      - TTS_PROVIDER=native
+      - PASSWORDMINCHAR=8
+      - APP_NAME="ZTech Mercury Messenger"
+      # Add any custom environment variables here
+    volumes:
+      - ./data:/app/server/storage
+    restart: always
+    depends_on:
+      - ollama
+    networks:
+      - ztech-network
+
+  ollama:
+    image: docker.io/ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama-data:/root/.ollama
+    container_name: ztech-mercury-ollama
+    pull_policy: always
+    tty: true
+    restart: always
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+    networks:
+      - ztech-network
+
+networks:
+  ztech-network:
+    driver: bridge
