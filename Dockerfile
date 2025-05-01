@@ -1,24 +1,19 @@
 FROM mintplexlabs/anythingllm:latest
 
-# Set a label to identify your custom build
-LABEL maintainer="ZTech <your-email@example.com>"
-LABEL description="ZTech Mercury Messenger App - Custom AnythingLLM Build"
+# Set labels for your custom build
+LABEL maintainer="Z-TECH Associates <hcushing@ztechnet.com>"
+LABEL description="ZTech Mercury Messenger - Enterprise Messaging Platform"
 
-# Copy any custom files or configurations
-COPY ./custom-files /app/custom-files
+# Copy custom branding files
+COPY ./custom-files/branding /app/frontend/public/branding
 
-# Set environment variables specific to your build
+# Set environment variables for your build
 ENV APP_NAME="ZTech Mercury Messenger"
 ENV CUSTOM_BRANDING=true
 
-# Add any additional installation steps
-RUN apt-get update && apt-get install -y \
-    your-additional-packages \
-    && rm -rf /var/lib/apt/lists/*
-
-# Add any custom scripts
+# Copy entrypoint script (already executable in the container)
 COPY ./scripts/custom-entrypoint.sh /app/
-RUN chmod +x /app/custom-entrypoint.sh
 
-# Override the default entrypoint if needed
-ENTRYPOINT ["/app/custom-entrypoint.sh"]
+# Use the default entrypoint from the base image
+# This avoids the chmod permission issues
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: yourusername/ztech-mercury-messenger:latest
+    image: aqws000/ztech-mercury-messenger:latest
     container_name: ztech-mercury-messenger
     ports:
       - "3001:3001"
