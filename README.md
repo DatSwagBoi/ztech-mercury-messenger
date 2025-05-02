@@ -40,7 +40,7 @@ ZTech Mercury Messenger is an enterprise messaging platform built on AnythingLLM
 
 The automated deployment script handles the entire installation process, including:
 - Downloading the repository (if needed)
-- Installing Docker Desktop with Hyper-V
+- Installing Docker Desktop with WSL2 (Optionally Hyper-V)
 - Deploying the application
 - Creating necessary directories and configuration
 
