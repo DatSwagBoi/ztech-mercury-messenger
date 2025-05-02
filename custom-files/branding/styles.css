@@ -1,0 +1,508 @@
+/* Z-Tech Associates Custom Styles for AnythingLLM */
+
+/* Color Variables */
+:root {
+  --ztech-primary: #0066cc;
+  --ztech-primary-dark: #004499;
+  --ztech-primary-light: #3399ff;
+  --ztech-accent: #ff6600;
+  --ztech-text: #333333;
+  --ztech-text-light: #666666;
+  --ztech-bg-dark: #1a1a1a;
+  --ztech-bg-light: #f5f5f5;
+  --ztech-border: #e0e0e0;
+  --ztech-success: #28a745;
+  --ztech-warning: #ffc107;
+  --ztech-error: #dc3545;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--ztech-text);
+}
+
+/* Header/Navbar Customization */
+.navigation-header,
+.top-bar,
+.header {
+  background-color: var(--ztech-primary) !important;
+  color: white !important;
+  border-bottom: 2px solid var(--ztech-primary-dark);
+}
+
+.navigation-header a,
+.top-bar a,
+.header a {
+  color: white !important;
+}
+
+/* Logo Area */
+.logo-container,
+.sidebar-logo {
+  padding: 1rem;
+  background-color: var(--ztech-primary-dark);
+}
+
+.logo-container img,
+.sidebar-logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+/* Sidebar Customization */
+.sidebar,
+.side-panel,
+.navigation-sidebar {
+  background-color: var(--ztech-bg-dark) !important;
+  border-right: 1px solid var(--ztech-border);
+}
+
+.sidebar-item,
+.nav-item,
+.sidebar-link {
+  color: #ffffff !important;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover,
+.nav-item:hover,
+.sidebar-link:hover {
+  background-color: var(--ztech-primary) !important;
+  color: white !important;
+}
+
+.sidebar-item.active,
+.nav-item.active,
+.sidebar-link.active {
+  background-color: var(--ztech-primary-dark) !important;
+  color: white !important;
+  border-left: 4px solid var(--ztech-accent);
+}
+
+/* Main Content Area */
+.main-content,
+.content-container {
+  background-color: var(--ztech-bg-light);
+}
+
+/* Chat Interface */
+.chat-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-message {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+}
+
+.chat-message.user {
+  background-color: var(--ztech-primary);
+  color: white;
+  margin-left: 20%;
+}
+
+.chat-message.assistant {
+  background-color: #f8f9fa;
+  color: var(--ztech-text);
+  margin-right: 20%;
+  border: 1px solid var(--ztech-border);
+}
+
+/* Input Area */
+.chat-input-container {
+  border-top: 1px solid var(--ztech-border);
+  padding: 1rem;
+  background-color: white;
+}
+
+.chat-input,
+.message-input,
+textarea.form-control {
+  border: 2px solid var(--ztech-border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input:focus,
+.message-input:focus,
+textarea.form-control:focus {
+  border-color: var(--ztech-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Buttons */
+.btn,
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary,
+button.primary {
+  background-color: var(--ztech-primary);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover,
+button.primary:hover {
+  background-color: var(--ztech-primary-dark);
+}
+
+.btn-secondary,
+button.secondary {
+  background-color: var(--ztech-text-light);
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover,
+button.secondary:hover {
+  background-color: var(--ztech-text);
+}
+
+.btn-accent,
+button.accent {
+  background-color: var(--ztech-accent);
+  color: white;
+  border: none;
+}
+
+.btn-accent:hover,
+button.accent:hover {
+  background-color: #e55b00;
+}
+
+/* Forms and Inputs */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--ztech-border);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: var(--ztech-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Cards and Panels */
+.card,
+.panel {
+  background-color: white;
+  border: 1px solid var(--ztech-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.card-header,
+.panel-header {
+  background-color: var(--ztech-bg-light);
+  border-bottom: 1px solid var(--ztech-border);
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.card-body,
+.panel-body {
+  padding: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th {
+  background-color: var(--ztech-primary);
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--ztech-border);
+}
+
+tr:hover {
+  background-color: var(--ztech-bg-light);
+}
+
+/* Alerts and Notifications */
+.alert {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.alert-error,
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Modal/Dialog Styling */
+.modal,
+.dialog {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header,
+.dialog-header {
+  background-color: var(--ztech-primary);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-body,
+.dialog-body {
+  padding: 1.5rem;
+}
+
+.modal-footer,
+.dialog-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--ztech-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ztech-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ztech-text-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ztech-text);
+}
+
+/* Loading States */
+.loading,
+.spinner {
+  color: var(--ztech-primary);
+}
+
+/* Tooltips */
+.tooltip {
+  background-color: var(--ztech-text);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-primary {
+  background-color: var(--ztech-primary);
+  color: white;
+}
+
+.badge-success {
+  background-color: var(--ztech-success);
+  color: white;
+}
+
+.badge-warning {
+  background-color: var(--ztech-warning);
+  color: black;
+}
+
+.badge-danger {
+  background-color: var(--ztech-error);
+  color: white;
+}
+
+/* Progress Bars */
+.progress {
+  height: 8px;
+  background-color: var(--ztech-bg-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: var(--ztech-primary);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .chat-message.user {
+    margin-left: 10%;
+  }
+  
+  .chat-message.assistant {
+    margin-right: 10%;
+  }
+}
+
+/* Custom Z-Tech Branding */
+.ztech-watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.1;
+  z-index: -1;
+  font-size: 0.8rem;
+  color: var(--ztech-text-light);
+}
+
+/* Override AnythingLLM specific elements */
+.bg-sidebar {
+  background-color: var(--ztech-bg-dark) !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.hover\:bg-gray-800:hover {
+  background-color: var(--ztech-primary) !important;
+}
+
+.bg-blue-500 {
+  background-color: var(--ztech-primary) !important;
+}
+
+.bg-blue-600 {
+  background-color: var(--ztech-primary-dark) !important;
+}
+
+.border-gray-200 {
+  border-color: var(--ztech-border) !important;
+}
+
+.text-gray-600 {
+  color: var(--ztech-text-light) !important;
+}
+
+.text-gray-800 {
+  color: var(--ztech-text) !important;
+}
+
+/* Custom Components */
+.ztech-header-bar {
+  background: linear-gradient(90deg, var(--ztech-primary-dark) 0%, var(--ztech-primary) 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ztech-footer {
+  background-color: var(--ztech-bg-dark);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Ensure Z-Tech branding is visible */
+.app-name::after {
+  content: " - Powered by Z-TECH Associates";
+  font-size: 0.8em;
+  opacity: 0.7;
+}

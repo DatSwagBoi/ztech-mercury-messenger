@@ -1,6 +1,6 @@
 # ZTech Mercury Messenger
 
-![ZTech Mercury Messenger Logo](https://static.wixstatic.com/media/d283e5_35a877e72a2d411ea79682140475c886~mv2.jpg/v1/fill/w_96,h_50,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d283e5_35a877e72a2d411ea79682140475c886~mv2.jpg)
+![ZTech Mercury Messenger Logo](https://coda.newjobs.com/api/imagesproxy/ms/CompanyJobPostingLogo/62749063/614292.jpg)
 
 ## Overview
 
