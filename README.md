@@ -1,8 +1,8 @@
 # ZTech Mercury Messenger
 
-<img align="right" width="300" src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.png" alt="ZTech Mercury Messenger Logo">
+<img align="right" width="300" src="https://static.wixstatic.com/media/d283e5_35a877e72a2d411ea79682140475c886~mv2.jpg" alt="Z-TECH Associates Logo">
 
-A secure, enterprise-grade messaging and knowledge management platform built on AnythingLLM with Ollama integration. ZTech Mercury Messenger provides organizations with a powerful, self-hosted solution for document retrieval, contextual AI conversations, and intelligent ticket assistance.
+A secure, enterprise-grade messaging and knowledge management platform built on AnythingLLM with Ollama integration. Developed by Z-TECH Associates, a Microsoft Certified Partner for over 20 years, Mercury Messenger provides organizations with a powerful, self-hosted solution for document retrieval, contextual AI conversations, and intelligent ticket assistance.
 
 [![GitHub license](https://img.shields.io/github/license/DatSwagBoi/ztech-mercury-messenger)](https://github.com/DatSwagBoi/ztech-mercury-messenger/blob/main/LICENSE)
 [![Docker Image](https://img.shields.io/docker/v/aqws000/ztech-mercury-messenger?label=docker)](https://hub.docker.com/r/aqws000/ztech-mercury-messenger)
@@ -37,7 +37,7 @@ A secure, enterprise-grade messaging and knowledge management platform built on 
 
 - **Secure Self-Hosted Solution**: Keep your data within your organization's infrastructure
 - **Document Processing**: Upload and process documents in various formats (PDF, DOCX, TXT, CSV, etc.)
-- **Z-TECH Branded Interface**: Custom-designed user experience
+- **Z-TECH Branded Interface**: Custom-designed user experience by IT support experts
 - **Contextual Conversations**: Chat with your documents using advanced LLM technology
 - **Ticket Management Integration**: Process and respond to support tickets with AI assistance
 - **Role-Based Access Control**: Manage user permissions with granular controls
@@ -293,9 +293,11 @@ requiring only that the original copyright notice and the permission notice are 
 ## Contact
 
 For support or inquiries, contact Z-TECH Associates:
-- Email: support@ztechnet.com
-- Website: https://ztechnet.com
+- Phone: 781.863.8884
+- Email: contactus@ztechnet.com
+- Website: https://www.ztechnet.com
+- Address: 555 Virginia Road, Suite 100, Concord, MA 01742
 
 ---
 
-Developed with ❤️ by [Z-TECH Associates](https://ztechnet.com)
+Developed with expertise by [Z-TECH Associates](https://www.ztechnet.com), delivering strategic IT solutions for over 20 years
