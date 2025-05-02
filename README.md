@@ -1,5 +1,13 @@
 # ZTech Mercury Messenger
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)](https://www.docker.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.68+-green?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://www.python.org/)
+[![Ollama](https://img.shields.io/badge/Ollama-Integrated-purple)](https://ollama.ai/)
+[![Security](https://img.shields.io/badge/Security-Enterprise%20Grade-red?logo=shield)](https://github.com/datswagboi/ztech-mercury-messenger)
+
+
 ![ZTech Mercury Messenger Logo](https://coda.newjobs.com/api/imagesproxy/ms/CompanyJobPostingLogo/62749063/614292.jpg)
 
 ## Overview
