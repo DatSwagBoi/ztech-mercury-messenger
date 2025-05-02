@@ -1,303 +1,341 @@
 # ZTech Mercury Messenger
 
-<img align="right" width="300" src="https://static.wixstatic.com/media/d283e5_35a877e72a2d411ea79682140475c886~mv2.jpg" alt="Z-TECH Associates Logo">
+![ZTech Mercury Messenger Logo](https://static.wixstatic.com/media/d283e5_35a877e72a2d411ea79682140475c886~mv2.jpg/v1/fill/w_96,h_50,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/d283e5_35a877e72a2d411ea79682140475c886~mv2.jpg)
 
-A secure, enterprise-grade messaging and knowledge management platform built on AnythingLLM with Ollama integration. Developed by Z-TECH Associates, a Microsoft Certified Partner for over 20 years, Mercury Messenger provides organizations with a powerful, self-hosted solution for document retrieval, contextual AI conversations, and intelligent ticket assistance.
+## Overview
 
-[![GitHub license](https://img.shields.io/github/license/DatSwagBoi/ztech-mercury-messenger)](https://github.com/DatSwagBoi/ztech-mercury-messenger/blob/main/LICENSE)
-[![Docker Image](https://img.shields.io/docker/v/aqws000/ztech-mercury-messenger?label=docker)](https://hub.docker.com/r/aqws000/ztech-mercury-messenger)
-
-## Table of Contents
-
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [System Requirements](#system-requirements)
-- [Installation](#installation)
-  - [Docker Installation](#docker-installation)
-  - [Configuration](#configuration)
-- [Usage Guide](#usage-guide)
-  - [User Interface](#user-interface)
-  - [Slash Commands](#slash-commands)
-  - [Working with Documents](#working-with-documents)
-  - [Managing Workspaces](#managing-workspaces)
-  - [Ticket Assistance](#ticket-assistance)
-- [Models](#models)
-  - [Configuring Ollama Models](#configuring-ollama-models)
-  - [Recommended Models](#recommended-models)
-- [Administration](#administration)
-  - [User Management](#user-management)
-  - [System Settings](#system-settings)
-- [Customization](#customization)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+ZTech Mercury Messenger is an enterprise messaging platform built on AnythingLLM with Ollama integration. It provides a secure, self-hosted solution for organizational communications with advanced AI capabilities.
 
 ## Features
 
-- **Secure Self-Hosted Solution**: Keep your data within your organization's infrastructure
-- **Document Processing**: Upload and process documents in various formats (PDF, DOCX, TXT, CSV, etc.)
-- **Z-TECH Branded Interface**: Custom-designed user experience by IT support experts
-- **Contextual Conversations**: Chat with your documents using advanced LLM technology
-- **Ticket Management Integration**: Process and respond to support tickets with AI assistance
-- **Role-Based Access Control**: Manage user permissions with granular controls
-- **Multi-Model Support**: Use different models for different tasks
-- **API Access**: Integrate with your existing tools and workflows
-- **Version History**: Track changes to documents and conversations
-
-## Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/DatSwagBoi/ztech-mercury-messenger.git
-cd ztech-mercury-messenger
-
-# Start the application
-docker compose up -d
-```
-
-Access the application at http://localhost:3001
-
-Default login:
-- Username: `admin@example.com`
-- Password: `password` (change immediately after first login)
+- **Enterprise-ready messaging platform**: Secure communications with end-to-end encryption
+- **Custom Z-TECH branding**: Professional interface designed for enterprise use
+- **Self-hosted RAG system**: Retrieval-Augmented Generation for enhanced AI responses
+- **Secure document processing**: Confidential document handling with proper access controls
+- **Local AI model integration**: Powered by Ollama for on-premises AI processing
+- **Multi-user support**: Role-based access control and user management
+- **Containerized deployment**: Easy installation and management using Docker
+- **FastAPI Backend**: High-performance Python backend using FastAPI and Uvicorn
 
 ## System Requirements
 
-- Docker-compatible operating system (Windows, macOS, Linux)
-- Docker and Docker Compose installed
-- Minimum 4GB RAM (8GB+ recommended)
-- 10GB+ free disk space
-- Internet connection for initial setup
+### Hardware Requirements
+- **CPU**: 4+ cores (8+ recommended for optimal performance)
+- **RAM**: 8GB minimum (16GB+ recommended)
+- **Storage**: 20GB+ available space (SSD recommended)
+- **Network**: Stable internet connection for initial setup
 
-## Installation
+### Software Requirements
+- **Operating System**:
+  - Windows 10/11 Pro, Enterprise, or Education (64-bit)
+  - Build 19045 (Windows 10 22H2) or higher
+- **Docker Desktop**:
+  - Latest version with Hyper-V backend
+- **Web Browser**:
+  - Chrome, Firefox, Edge, or Safari (latest versions)
 
-### Docker Installation
+## Installation Options
 
-The recommended way to install ZTech Mercury Messenger is using Docker:
+### Option 1: Automated Deployment (Recommended)
 
-```bash
-# Clone the repository
-git clone https://github.com/DatSwagBoi/ztech-mercury-messenger.git
-cd ztech-mercury-messenger
+The automated deployment script handles the entire installation process, including:
+- Downloading the repository (if needed)
+- Installing Docker Desktop with Hyper-V
+- Deploying the application
+- Creating necessary directories and configuration
 
-# Create an environment file (optional)
-cp .env.example .env
-# Edit the .env file with your preferred settings
+#### Steps:
 
-# Start the application
-docker compose up -d
+1. Download `MercuryInstallerWSL2.ps1` from the Z-TECH portal or GitHub repository(Or download the whole repository and run it from there)
+2. Right-click the script and select "Run with PowerShell" (requires administrator privileges)
+3. Follow the on-screen prompts
+4. You may need to Reboot once you get a WSL error, Then Start the script again when the PC boots(This is to Install WSL)
+5. You may need to open Powershell to run WSL --update or WSL --start
+6. After completion, access the application at http://localhost:3001
+
+### Option 2: Manual Installation
+
+If you prefer to install the components manually, follow these steps:
+
+#### Prerequisites:
+1. Install Docker Desktop with Hyper-V backend
+   - Download from [Docker's official website](https://www.docker.com/products/docker-desktop)
+   - During installation, select Hyper-V as the backend
+
+#### Deployment Steps:
+1. Clone or download this repository:
+   ```
+   git clone https://github.com/yourusername/ztech-mercury-messenger.git
+   ```
+   
+2. Navigate to the project directory:
+   ```
+   cd ztech-mercury-messenger
+   ```
+   
+3. Create required directories:
+   ```
+   mkdir -p data ollama-data
+   ```
+   
+4. Create a `.env` file in the project root with the following content:
+   ```
+   JWT_SECRET=your_secure_jwt_secret_key
+   ```
+   
+5. Start the application using one of the following methods:
+
+   **Option A: Using docker-compose.yml (full stack)**
+   ```
+   docker-compose up -d
+   ```
+   Access the full application at http://localhost:3001
+   
+   **Option B: Using compose.yaml (server only)**
+   ```
+   docker compose -f compose.yaml up -d
+   ```
+   Access the API server at http://localhost:8000
+
+## First-Time Setup
+
+After deployment, follow these steps to complete your ZTech Mercury Messenger setup:
+
+1. **Create Admin Account**:
+   - Access http://localhost:3001
+   - Complete the registration form for the admin account
+   - Use a strong password (minimum 8 characters)
+
+2. **Configure Ollama Models**:
+   - The system will automatically download the required models
+   - This process may take several minutes depending on your internet connection
+   - Default models:
+     - `qwen3:0.6b` (Primary LLM)
+     - `nomic-embed-text:latest` (Embedding model)
+
+3. **System Configuration**:
+   - Navigate to Settings → System
+   - Verify all services are running properly
+   - Adjust system settings as needed for your organization
+
+4. **User Management**:
+   - Add additional users through the Admin panel
+   - Assign appropriate permissions
+   - Set up user groups as needed
+
+## Architecture
+
+ZTech Mercury Messenger consists of the following containers:
+
+1. **server**:
+   - Python FastAPI backend application
+   - Handles API requests, authentication, and data processing
+   - Built with Python 3.10 and Uvicorn for high performance
+   - Exposed on port 8000
+
+2. **ztech-mercury**:
+   - Frontend and backend application
+   - Handles user interface, authentication, and message processing
+   - Built on AnythingLLM with custom Z-TECH branding
+   - Exposed on port 3001
+
+3. **ollama**:
+   - Local AI model server
+   - Provides LLM and embedding capabilities
+   - Runs independently but integrated with the main application
+   - Exposed on port 11434 (internal only)
+
+The containers are connected via a Docker network for secure communication.
+
+### File Structure
+
+```
+ztech-mercury-messenger/
+├── .dockerignore          # Specifies files to exclude from Docker build
+├── .github/               # GitHub workflows and configuration
+├── data/                  # Application data storage
+├── scripts/               # Utility scripts
+├── compose.yaml           # Docker Compose configuration
+├── config.py              # Application configuration
+├── docker-compose.yml     # Main Docker Compose configuration
+├── Dockerfile             # Docker build instructions
+├── main.py                # FastAPI application entry point
+├── requirements.txt       # Python dependencies
+└── README.md              # This documentation
 ```
 
-### Configuration
+## Data Storage and Backup
 
-Configure the application by editing the `.env` file or environment variables in `docker-compose.yml`:
+All persistent data is stored in two main directories:
 
-| Variable | Description | Default |
-|---|---|---|
-| `JWT_SECRET` | Secret key for JWT token generation | `your_secure_jwt_secret_key` |
-| `LLM_PROVIDER` | LLM provider to use | `ollama` |
-| `OLLAMA_BASE_PATH` | URL for Ollama API | `http://ollama:11434` |
-| `OLLAMA_MODEL_PREF` | Default model for chat | `llama2` |
-| `EMBEDDING_ENGINE` | Engine for document embeddings | `ollama` |
-| `EMBEDDING_MODEL_PREF` | Model for embeddings | `nomic-embed-text` |
+- **`./data/`**: Contains application data, user information, and message history
+- **`./ollama-data/`**: Contains AI models and related data
 
-## Usage Guide
-
-### User Interface
-
-ZTech Mercury Messenger provides an intuitive interface with these main sections:
-
-- **Chat**: Where you have conversations with your documents
-- **Documents**: Upload and manage your document library
-- **Workspaces**: Organize documents into contextual workspaces
-- **Tools**: Access specialized functions like ticket processing
-- **Settings**: Configure your user preferences and system settings
-
-### Slash Commands
-
-Enhance your experience with these slash commands:
-
-| Command | Description | Example |
-|---|---|---|
-| `/help` | Display help information | `/help` |
-| `/clear` | Clear the current conversation | `/clear` |
-| `/model [name]` | Switch to a different model | `/model llama3` |
-| `/upload` | Upload a document to the current workspace | `/upload` |
-| `/search [query]` | Search through documents | `/search network issues` |
-| `/ticket [id]` | Retrieve information about a specific ticket | `/ticket T-1234` |
-| `/summarize` | Summarize the current conversation | `/summarize` |
-| `/export [format]` | Export the conversation | `/export pdf` |
-| `/system [prompt]` | Set a system prompt | `/system You are a helpful assistant` |
-| `/context [doc]` | Add a specific document to the context | `/context network-policy.pdf` |
-
-### Working with Documents
-
-1. **Uploading Documents**:
-   - Navigate to the Documents section
-   - Click "Upload Document"
-   - Select files from your computer
-   - Documents will be processed and embedded automatically
-
-2. **Document Management**:
-   - View all documents in your library
-   - Search for specific documents
-   - Tag documents for better organization
-   - Delete documents when no longer needed
-
-3. **Document Processing Status**:
-   - Pending: Document is queued for processing
-   - Processing: Document is being processed
-   - Completed: Document is ready for use
-   - Failed: Processing failed (check logs for details)
-
-### Managing Workspaces
-
-Workspaces help organize documents into contextual groups:
-
-1. **Creating a Workspace**:
-   - Go to Workspaces
-   - Click "New Workspace"
-   - Name your workspace and add a description
-   - Select documents to include
-
-2. **Using Workspaces**:
-   - Switch between workspaces to change context
-   - Add or remove documents from workspaces
-   - Share workspaces with team members
-
-### Ticket Assistance
-
-ZTech Mercury Messenger can help process support tickets:
-
-1. **Ticket Processing**:
-   - Import tickets from your ticketing system
-   - Generate responses based on your knowledge base
-   - Review and edit suggestions before sending
-
-2. **Knowledge-Based Responses**:
-   - The system uses your documents to generate contextual responses
-   - Historical ticket resolutions improve future suggestions
-   - Tags and categories help organize common issues
-
-3. **Ticket Commands**:
-   - `/ticket new` - Create a new ticket
-   - `/ticket assign [user]` - Assign a ticket to a user
-   - `/ticket status [id] [status]` - Update ticket status
-   - `/ticket history [id]` - Show ticket history
-   - `/ticket similar [id]` - Find similar tickets
-
-## Models
-
-### Configuring Ollama Models
-
-ZTech Mercury Messenger uses Ollama for AI functionality:
-
-1. **Installing Models**:
-   ```bash
-   # Connect to the Ollama container
-   docker exec -it ztech-mercury-ollama /bin/bash
-   
-   # Pull models (examples)
-   ollama pull llama2
-   ollama pull nomic-embed-text
-   ollama pull mistral
-   ollama pull codellama
-   ```
-
-2. **Model Configuration**:
-   - Chat models: Used for conversation
-   - Embedding models: Used for document processing
-   - Specialized models: For specific tasks like code or medical content
-
-### Recommended Models
-
-| Task | Recommended Models | Size | Performance |
-|---|---|---|---|
-| General Chat | llama2, mistral, llama3 | 7B-13B | Good balance of performance/resources |
-| Code Assistance | codellama, wizardcoder | 7B-13B | Specialized for code generation |
-| Embeddings | nomic-embed-text, all-MiniLM-L6-v2 | < 1GB | Efficient for document processing |
-| Complex Reasoning | llama3, gemma | 13B+ | Better reasoning capabilities |
-
-## Administration
-
-### User Management
-
-1. **Adding Users**:
-   - Navigate to Settings > Users
-   - Click "Add User"
-   - Enter email and initial password
-   - Assign appropriate roles
-
-2. **User Roles**:
-   - Admin: Full system access
-   - Manager: Can manage workspaces and documents
-   - User: Basic access to assigned workspaces
-   - Viewer: Read-only access
-
-### System Settings
-
-Access settings at Settings > System:
-
-- **Security**: Configure authentication methods and password policies
-- **Storage**: Manage document storage settings and quotas
-- **Models**: Configure default models and parameters
-- **Appearance**: Customize interface elements and branding
-- **Backups**: Configure automated backups
-- **Logs**: View system logs and diagnostics
+To backup your deployment:
+1. Stop the application: `docker-compose down`
+2. Copy the `data` and `ollama-data` directories to a secure location
+3. Restart the application: `docker-compose up -d`
 
 ## Customization
 
-Customize ZTech Mercury Messenger to match your organization's needs:
+### Branding
 
-1. **Branding**:
-   - Place your logo in `custom-files/branding/`
-   - Customize colors in the appearance settings
+The application comes pre-configured with Z-TECH branding. To customize:
 
-2. **Custom Prompts**:
-   - Create organization-specific prompts for common tasks
-   - Save and share prompts with team members
+1. Replace files in the `custom-files/branding` directory:
+   - `logo.png`: Main application logo (recommended size: 200x50px)
+   - `favicon.ico`: Browser tab icon
+   - `styles.css`: Custom CSS for appearance modifications
 
-3. **Integrations**:
-   - Connect to external systems via the API
-   - Set up webhooks for event notifications
+2. Rebuild the container:
+   ```
+   docker-compose build ztech-mercury
+   docker-compose up -d
+   ```
+
+### Configuration Options
+
+Adjust application settings through environment variables in `docker-compose.yml`:
+
+- `APP_NAME`: Change the application title
+- `OLLAMA_MODEL_PREF`: Select different LLM model
+- `EMBEDDING_MODEL_PREF`: Select different embedding model
+- `PASSWORDMINCHAR`: Adjust minimum password length
+
+## Security Considerations
+
+- **Authentication**: JWT-based authentication with configurable token expiration
+- **Data Privacy**: All data remains on-premises; no external APIs required
+- **Encryption**: Communications encrypted in transit with HTTPS
+- **Access Control**: Role-based permissions system
+- **Audit Logging**: User activities are logged for security monitoring
 
 ## Troubleshooting
 
-Common issues and solutions:
+### Common Issues
 
-| Issue | Solution |
-|---|---|
-| Application won't start | Check Docker logs with `docker logs ztech-mercury-messenger` |
-| Model not found | Ensure you've pulled the model to Ollama with `ollama pull [model]` |
-| Slow document processing | Check system resources or use a smaller embedding model |
-| Authentication issues | Verify JWT_SECRET is properly set and consistent |
-| Database errors | Check storage permissions and available space |
+#### Docker Desktop Won't Start
+- Verify Hyper-V is properly enabled
+- Check system requirements are met
+- Restart computer and try again
 
-## Contributing
+#### Application Not Responding
+- Check Docker containers are running: `docker-compose ps`
+- View logs: `docker-compose logs`
+- Ensure ports 3001, 8000, and 11434 are not used by other applications
 
-We welcome contributions to ZTech Mercury Messenger:
+#### API Server Issues
+- Check FastAPI server logs: `docker-compose logs server`
+- Verify the server container is running: `docker ps | grep server`
+- Test the API directly: `curl http://localhost:8000/docs` (should display Swagger documentation)
 
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Submit a pull request
+#### Models Fail to Download
+- Check internet connection
+- Verify sufficient disk space
+- Review Ollama logs: `docker-compose logs ollama`
+
+#### Performance Issues
+- Increase container resource limits in Docker Desktop settings
+- Consider using a more lightweight model like `qwen3:0.6b-Q2_K` for lower resource usage
+- Close other resource-intensive applications
+
+#### Directory Access Issues
+- Check the ALLOWED_DIRECTORIES setting in config.py
+- Ensure the application has proper permissions to the specified directories
+- For security reasons, only directories explicitly listed in ALLOWED_DIRECTORIES can be accessed
+
+### Logs
+
+Access container logs for troubleshooting:
+```
+docker-compose logs server
+docker-compose logs ztech-mercury-messenger
+docker-compose logs ollama
+```
+
+## Development
+
+### Local Development Setup
+
+For developers who want to contribute to the project or make modifications:
+
+1. Set up a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Run FastAPI server locally:
+   ```
+   uvicorn main:app --reload
+   ```
+
+4. Access the API documentation at http://localhost:8000/docs
+
+### Docker Development
+
+For testing Docker builds:
+
+1. Build the server container:
+   ```
+   docker build -t ztech-mercury-server .
+   ```
+
+2. Run the server container:
+   ```
+   docker run -p 8000:8000 ztech-mercury-server
+   ```
+
+## Updating
+
+To update to the latest version:
+
+1. Pull the latest changes:
+   ```
+   git pull
+   ```
+   
+2. Rebuild and restart containers:
+   ```
+   docker-compose down
+   docker-compose build
+   docker-compose up -d
+   ```
+   
+   Alternatively, to only update the server component:
+   ```
+   docker compose -f compose.yaml down
+   docker compose -f compose.yaml build
+   docker compose -f compose.yaml up -d
+   ```
+
+## Enterprise Support
+
+Z-TECH Associates provides enterprise support packages with:
+
+- Priority technical assistance
+- Custom deployment options
+- Advanced security features
+- Training and onboarding
+- Extended maintenance and updates
+
+Contact Z-TECH Associates at support@ztechnet.com for enterprise support options.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details. 
-This permissive license allows for free use, modification, and distribution of the software,
-requiring only that the original copyright notice and the permission notice are preserved.
+ZTech Mercury Messenger is open source software licensed under the MIT License. This permissive license allows you to freely use, modify, distribute, and sell the software, provided that the original copyright notice and permission notice are included in all copies or substantial portions of the software.
 
-## Contact
+## About Z-TECH Associates
 
-For support or inquiries, contact Z-TECH Associates:
-- Phone: 781.863.8884
-- Email: contactus@ztechnet.com
-- Website: https://www.ztechnet.com
-- Address: 555 Virginia Road, Suite 100, Concord, MA 01742
+Z-TECH Associates specializes in enterprise AI solutions, secure communications, and custom software development. Our team of experts delivers cutting-edge technology with a focus on security, usability, and performance.
+
+[Visit our website](https://www.ztechnet.com) for more information about our products and services.
 
 ---
 
-Developed with expertise by [Z-TECH Associates](https://www.ztechnet.com), delivering strategic IT solutions for over 20 years
+© 2025 Z-TECH Associates. All rights reserved.
